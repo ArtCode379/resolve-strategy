@@ -1,0 +1,17 @@
+{
+  "phase": "scaffold_cloned",
+  "updated_at": "2026-08-20T18:42:07.070901+00:00",
+  "slug": "resolve-strategy",
+  "type": "service",
+  "package": "resolveclaimsni.management.resolvestrategy",
+  "prefix": "RHDNC",
+  "app_name": "Resolve Strategy",
+  "task_gid": "1217446468003827",
+  "task_name": "GB GW4 C1459",
+  "asana_url": "https://app.asana.com/1/1208304498069546/project/1213586227413017/task/1217446468003827",
+  "domain": "https://resolveclaims.study",
+  "company": "RESOLVE CLAIMS N.I. LTD",
+  "repo_url": "https://github.com/ArtCode379/resolve-strategy",
+  "quality_status": "not_run",
+  "build_status": "not_run"
+}
