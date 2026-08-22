@@ -1,6 +1,6 @@
 === QUALITY CHECK: /tmp/resolve-strategy ===
 
-WARN: Only 1 commit(s) — final implementation commit may not exist yet
+  OK: 2 commits
 /home/codex-agent/codex-app-agent/quality-check.sh: line 39: [: 0
 0: integer expression expected
   OK: Repository: 0
@@ -12,7 +12,7 @@ WARN: Only 1 commit(s) — final implementation commit may not exist yet
   OK: No obvious no-op onClick handlers
   OK: icon.png (200082B, 512x512, rounded opaque canvas, transparent corners)
   OK: Application class ServiceApplication exists
-  OK: HomeScreen.kt: 235 lines
+  OK: HomeScreen.kt: 331 lines
   OK: No project-local agent instruction files
   OK: dynamicColor not enabled
   OK: Google Fonts dependency found

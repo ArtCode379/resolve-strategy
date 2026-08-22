@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "resolveclaimsni.management.resolvestrategy"
+    namespace = "resolve.projectdelivery.resolvestrategy"
     compileSdk {
         version = release(36)
     }
@@ -17,7 +17,7 @@ android {
 
 
     defaultConfig {
-        applicationId = "resolveclaimsni.management.resolvestrategy"
+        applicationId = "resolve.projectdelivery.resolvestrategy"
         minSdk = 29
         targetSdk = 36
         versionCode = 1
