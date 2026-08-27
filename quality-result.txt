@@ -1,6 +1,6 @@
 === QUALITY CHECK: /tmp/resolve-strategy ===
 
-  OK: 2 commits
+  OK: 3 commits
 /home/codex-agent/codex-app-agent/quality-check.sh: line 39: [: 0
 0: integer expression expected
   OK: Repository: 0

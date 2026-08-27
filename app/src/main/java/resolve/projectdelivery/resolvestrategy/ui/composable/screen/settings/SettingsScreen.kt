@@ -11,12 +11,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Business
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Language
+import androidx.compose.material.icons.outlined.Policy
 import androidx.compose.material.icons.outlined.SupportAgent
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,6 +31,14 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     SettingsScreenContent(
         modifier = modifier,
+        onOpenLegal = {
+            context.startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("http://resolveproject.courses/"),
+                ),
+            )
+        },
         onCustomerSupport = {
             context.startActivity(
                 Intent(
@@ -42,6 +53,7 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
 @Composable
 fun SettingsScreenContent(
     modifier: Modifier = Modifier,
+    onOpenLegal: () -> Unit,
     onCustomerSupport: () -> Unit,
 ) {
     Column(
@@ -55,12 +67,50 @@ fun SettingsScreenContent(
             SettingRow(Icons.Outlined.Business, "Company", "RESOLVE PROJECT DELIVERY LTD")
             SettingRow(Icons.Outlined.Info, "App version", "1.0.0")
         }
+        Text("Legal", style = MaterialTheme.typography.titleLarge)
+        Card(Modifier.fillMaxWidth()) {
+            LegalRow(
+                icon = Icons.Outlined.Policy,
+                label = "Privacy & terms",
+                onClick = onOpenLegal,
+            )
+            LegalRow(
+                icon = Icons.Outlined.Language,
+                label = "Company website",
+                onClick = onOpenLegal,
+            )
+        }
         Text("Customer Support", style = MaterialTheme.typography.titleLarge)
         Text("Talk to our team about your consultation or using Resolve Strategy.")
         OutlinedButton(onClick = onCustomerSupport, modifier = Modifier.fillMaxWidth()) {
             Icon(Icons.Outlined.SupportAgent, contentDescription = null)
             Text("  Customer Support")
         }
+    }
+}
+
+@Composable
+private fun LegalRow(
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    label: String,
+    onClick: () -> Unit,
+) {
+    TextButton(
+        onClick = onClick,
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = null,
+            tint = MaterialTheme.colorScheme.primary,
+        )
+        Text(
+            text = label,
+            modifier = Modifier
+                .weight(1f)
+                .padding(horizontal = 12.dp),
+        )
+        Text("Open")
     }
 }
 
